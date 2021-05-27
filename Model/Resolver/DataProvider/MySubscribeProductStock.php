@@ -70,13 +70,7 @@ class MySubscribeProductStock
 
         $searchResult = $this->apiRepository->getListStock($customer_id, $searchCriteria );
         $totalPages = $args['pageSize'] ? ((int)ceil($searchResult->getTotalCount() / $args['pageSize'])) : 0;
-        $resultItems = $searchResult->getItems();
-        $items = [];
-        if($resultItems){
-            foreach($resultItems as $_item){
-                $items[] = $_item->__toArray();
-            }
-        }
+        $items = $searchResult->getItems();
         return [
             'total_count' => $searchResult->getTotalCount(),
             'items'       => $items,

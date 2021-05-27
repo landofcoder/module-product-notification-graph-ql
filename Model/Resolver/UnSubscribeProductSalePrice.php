@@ -72,7 +72,7 @@ class UnSubscribeProductSalePrice implements ResolverInterface
         if(isset($args["website_id"]) && (int)$args["website_id"] > 0){
             $message = $this->apiAllRepository->postUnsubscribePriceAll($requestDataObject);
         }else {
-            $message = $this->apiRepository->postSubscribeProductSalePrice($requestDataObject);
+            $message = $this->apiRepository->postUnsubscribePrice($requestDataObject);
         }
         
         return $message;   

@@ -4,7 +4,7 @@
         <arguments>
             <argument name="attributesInstances" xsi:type="array">
                 <item name="mySubscribeProductStock" xsi:type="object">\Lof\ProductNotificationGraphQl\Model\Resolver\FilterArgumentSubscribeProductStock</item>
-                <item name="mySubscribeProductPrice" xsi:type="object">\Lof\ProductNotificationGraphQl\Model\Resolver\FilterArgumentSubscribeProductPrice</item>
+                <item name="mySubscribeProductSalePrice" xsi:type="object">\Lof\ProductNotificationGraphQl\Model\Resolver\FilterArgumentSubscribeProductPrice</item>
             </argument>
         </arguments>
     </type>

@@ -81,7 +81,142 @@ Magento 2 product notify in stock, sales price to subscriber Graph QL
 - landofcoder/module-product-notification
 
 ## Example Graph Ql Query
-- 
+1. Subscribe Price Drops Notification
+
+```
+mutation {
+ subscribeProductSalePrice(
+  product_id: 15
+  product_sku: "24-MB06"
+  price:45.00
+  subscriber_name: "roni_cost"
+  subscriber_email: "roni_cost@example.com"
+  message: "Please let me know when it have sale price"
+)
+}
+```
+2. Subscribe Out of stock - Product back stock Notification
+
+```
+mutation {
+ subscribeProductStock(
+  product_id: 15
+  product_sku: "24-MB06"
+  subscriber_name: "roni_cost"
+  subscriber_email: "roni_cost@example.com"
+  message: "Please let me know when it have back to stock"
+)
+}
+```
+
+3. Show List product price drop subscription of logged in customer
+
+```
+{
+mySubscribeProductSalePrice(
+  filters: {}
+  sort: {
+    alert_price_id: ASC
+  }
+){
+  total_count
+  items{
+    alert_price_id
+    subscriber_name
+    subscriber_email
+    customer_id
+    send_count
+    price
+    product_id
+    token
+    message
+    product_sku
+    website_id
+    store_id
+  }
+}
+}
+```
+
+4. Show List out of stock subscription of logged in customer
+
+```
+{
+mySubscribeProductStock(
+  filters: {}
+  sort: {
+    alert_stock_id: ASC
+  }
+){
+  total_count
+  items{
+    alert_stock_id
+    subscriber_name
+    subscriber_email
+    customer_id
+    send_count
+    price
+    product_id
+    token
+    message
+    product_sku
+    website_id
+    store_id
+  }
+}
+}
+```
+
+5. Un Subscription Price Drop by id
+
+```
+mutation{
+unSubscribeProductSalePrice(
+  id:2,
+  token:"7umjb382d04n8d3ayiargm6cqzqb08"
+  email:"roni_cost@example.com"
+)
+}
+```
+
+6. Un Subscription Out of stock by id
+
+```
+mutation{
+unSubscribeProductStock(
+  id:2,
+  token:"7umjb382d04n8d3ayiargm6cqzqb08"
+  email:"roni_cost@example.com"
+)
+}
+```
+
+7. Un Subscription Price Drop all by website_id
+
+```
+mutation{
+unSubscribeProductSalePrice(
+  id:2,
+  token:"7umjb382d04n8d3ayiargm6cqzqb08"
+  email:"roni_cost@example.com"
+  website_id: 1
+)
+}
+```
+
+8. Un Subscription Price Drop all by website_id
+
+```
+mutation{
+unSubscribeProductStock(
+  id:2,
+  token:"7umjb382d04n8d3ayiargm6cqzqb08"
+  email:"roni_cost@example.com"
+  website_id: 1
+)
+}
+```
+
 ## Donation
 
 If this project help you reduce time to develop, you can give me a cup of coffee :) 
