@@ -179,12 +179,11 @@ type SortFields @doc(description: "SortFields contains a default value for sort 
 
 type StoreConfig {
     
-    productnotification_general_settings_enable  : String  @doc(description: "Query by productnotification_general_settings_enable.") 
-    productnotification_productalert_email_identity  : String  @doc(description: "Query by productnotification_productalert_email_identity.") 
-    productnotification_productalert_allow_price  : String  @doc(description: "Query by productnotification_productalert_allow_price.") 
-    productnotification_productalert_disable_price_guest  : String  @doc(description: "Query by productnotification_productalert_disable_price_guest.") 
-    productnotification_productalert_allow_stock  : String  @doc(description: "Query by productnotification_productalert_allow_stock.") 
-    productnotification_productalert_disable_stock_guest  : String  @doc(description: "Query by productnotification_productalert_disable_stock_guest.") 
-    productnotification_productalert_allow_new_product  : String  @doc(description: "Query by productnotification_productalert_allow_new_product.") 
-    productnotification_productalert_cat_ids  : String  @doc(description: "Query by productnotification_productalert_cat_ids.") 
+    productnotification_enable  : String  @doc(description: "Query by productnotification_enable.") 
+    productnotification_price  : String  @doc(description: "Query by productnotification_price.") 
+    productnotification_price_guest  : String  @doc(description: "Query by productnotification_price_guest.") 
+    productnotification_allow_stock  : String  @doc(description: "Query by productnotification_allow_stock.") 
+    productnotification_disable_stock_guest  : String  @doc(description: "Query by productnotification_disable_stock_guest.") 
+    productnotification_allow_new_product  : String  @doc(description: "Query by productnotification_allow_new_product.") 
+    productnotification_cat_ids  : String  @doc(description: "Query by productnotification_cat_ids.") 
 }
