@@ -19,7 +19,7 @@ use Lof\ProductNotification\Api\UnsubscribeStockManagementInterface;
 use Lof\ProductNotification\Api\UnsubscribeStockAllManagementInterface;
 use Magento\Framework\Api\DataObjectHelper;
 
-class UnSubscribeProductSalePrice implements ResolverInterface
+class UnSubscribeProductStock implements ResolverInterface
 {
     /**
      * @var UnsubscribeStockManagementInterface
