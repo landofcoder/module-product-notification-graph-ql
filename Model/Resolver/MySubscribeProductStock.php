@@ -13,6 +13,7 @@ use Magento\Framework\GraphQl\Exception\GraphQlInputException;
 use Magento\Framework\GraphQl\Exception\GraphQlNoSuchEntityException;
 use Magento\Framework\GraphQl\Query\ResolverInterface;
 use Magento\Framework\GraphQl\Schema\Type\ResolveInfo;
+use Magento\Framework\GraphQl\Exception\GraphQlAuthorizationException;
 
 class MySubscribeProductStock implements ResolverInterface
 {
@@ -38,7 +39,13 @@ class MySubscribeProductStock implements ResolverInterface
         array $value = null,
         array $args = null
     ) {
-        $mySubscribeProductStockData = $this->mySubscribeProductStockDataProvider->getMySubscribeProductStock();
+        if (false === $context->getExtensionAttributes()->getIsCustomer()) {
+            throw new GraphQlAuthorizationException(__('The current customer isn\'t authorized.'));
+        }
+        $mySubscribeProductStockData = $this->mySubscribeProductStockDataProvider->getMySubscribeProductSalePrice(
+            $args, 
+            $context
+        );
         return $mySubscribeProductStockData;
     }
 }

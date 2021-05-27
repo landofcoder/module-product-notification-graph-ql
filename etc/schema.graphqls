@@ -24,13 +24,15 @@ type Mutation {
             id: Int @doc(description: "Query by id."),
             aid: String @doc(description: "Query by aid."),
             email: String @doc(description: "Query by email."),
-            token: String @doc(description: "Query by token.")
+            token: String @doc(description: "Query by token."),
+            website_id: Int = 0 @doc(description: "Query by id.")
     ) : String @resolver( class: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\UnSubscribeProductSalePrice") @doc(description: "Query by Mutation un subscribe product on sales.") 
     unSubscribeProductStock (
             id: Int @doc(description: "Query by id."),
             aid: String @doc(description: "Query by aid."),
             email: String @doc(description: "Query by email."),
-            token: String @doc(description: "Query by token.")
+            token: String @doc(description: "Query by token."),
+            website_id: Int = 0 @doc(description: "Query by id.")
     ) : String @resolver( class: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\UnSubscribeProductStock") @doc(description: "Query by Mutation un subscribe product back stock.") 
 }
 
@@ -85,14 +87,28 @@ input MySubscribeProductStockFilterInput  @doc(description: "MySubscribeProductS
 
 input MySubscribeProductSalePriceSortInput @doc(description: "MySubscribeProductSalePriceSortInput specifies the attribute to use for sorting search results and indicates whether the results are sorted in ascending or descending order. It's possible to sort sliders using searchable attributes with enabled 'Use in Filter Options' option")
 {
-    created_at: SortEnum @doc(description: "Sort by the created_at (default).")
-    updated_at: SortEnum @doc(description: "Sort by the updated_at assigned to each slider.")
-    is_featured: SortEnum @doc(description: "Sort by the is_featured assigned to each slider.")
-    is_enabled: SortEnum @doc(description: "Sort by the is_enabled assigned to each slider.")
-    title: SortEnum @doc(description: "Sort by the title assigned to each slider.")
-    type: SortEnum @doc(description: "Sort by the type assigned to each slider.")
-    resource_type: SortEnum @doc(description: "Sort by the resource_type assigned to each slider.")
-    entity_id: SortEnum @doc(description: "Sort by the entity_id.")
+    alert_price_id: SortEnum @doc(description: "Sort by the alert_price_id (default).")
+    product_id: SortEnum @doc(description: "Sort by the product_id assigned to each slider.")
+    price: SortEnum @doc(description: "Sort by the price assigned to each slider.")
+    add_date: SortEnum @doc(description: "Sort by the add_date assigned to each slider.")
+    send_count: SortEnum @doc(description: "Sort by the send_count assigned to each slider.")
+    status: SortEnum @doc(description: "Sort by the status assigned to each slider.")
+    product_sku: SortEnum @doc(description: "Sort by the product_sku assigned to each slider.")
+    last_send_date: SortEnum @doc(description: "Sort by the last_send_date.")
+    store_id: SortEnum @doc(description: "Sort by the store_id.")
+}
+
+input MySubscribeProductStockSortInput @doc(description: "MySubscribeProductStockSortInput specifies the attribute to use for sorting search results and indicates whether the results are sorted in ascending or descending order. It's possible to sort sliders using searchable attributes with enabled 'Use in Filter Options' option")
+{
+    alert_stock_id: SortEnum @doc(description: "Sort by the alert_stock_id (default).")
+    product_id: SortEnum @doc(description: "Sort by the product_id assigned to each slider.")
+    price: SortEnum @doc(description: "Sort by the price assigned to each slider.")
+    add_date: SortEnum @doc(description: "Sort by the add_date assigned to each slider.")
+    send_count: SortEnum @doc(description: "Sort by the send_count assigned to each slider.")
+    status: SortEnum @doc(description: "Sort by the status assigned to each slider.")
+    product_sku: SortEnum @doc(description: "Sort by the product_sku assigned to each slider.")
+    last_send_date: SortEnum @doc(description: "Sort by the last_send_date.")
+    store_id: SortEnum @doc(description: "Sort by the store_id.")
 }
 
 type MySubscribeProductSalePrice {
