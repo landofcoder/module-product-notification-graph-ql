@@ -41,14 +41,14 @@ type Query {
         pageSize: Int = 20 @doc(description: "Specifies the maximum number of results to return at once. This attribute is optional.")
         currentPage: Int = 1 @doc(description: "Specifies which page of results to return. The default value is 1.")
         sort: MySubscribeProductSalePriceSortInput @doc(description: "Specifies which attributes to sort on, and whether to return the results in ascending or descending order.")
-    ) : MySubscribeProductSalePrices @resolver( class: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\MySubscribeProductSalePrice") @doc(description: "Query by Query logged in customer subscribe product sales price list.") @cache( cacheIdentity: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\MySubscribeProductSalePrice\Identity")
+    ) : MySubscribeProductSalePrices @resolver( class: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\MySubscribeProductSalePrice") @doc(description: "Query by Query logged in customer subscribe product sales price list.") @cache( cacheIdentity: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\MySubscribeProductSalePrice\\Identity")
 
     mySubscribeProductStock (
         filters: MySubscribeProductStockFilterInput @doc(description: "Identifies which subscribe product in stock filter inputs to search for and return.")
         pageSize: Int = 20 @doc(description: "Specifies the maximum number of results to return at once. This attribute is optional.")
         currentPage: Int = 1 @doc(description: "Specifies which page of results to return. The default value is 1.")
         sort: MySubscribeProductStockSortInput @doc(description: "Specifies which attributes to sort on, and whether to return the results in ascending or descending order.")
-    ) : MySubscribeProductStocks @resolver( class: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\MySubscribeProductStock") @doc(description: "Query by Query logged in customer subscribe product out of stock list.") @cache( cacheIdentity: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\MySubscribeProductStock\Identity")
+    ) : MySubscribeProductStocks @resolver( class: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\MySubscribeProductStock") @doc(description: "Query by Query logged in customer subscribe product out of stock list.") @cache( cacheIdentity: "Lof\\ProductNotificationGraphQl\\Model\\Resolver\\MySubscribeProductStock\\Identity")
 }
 
 input MySubscribeProductSalePriceFilterInput  @doc(description: "MySubscribeProductSalePriceFilterInput defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for.")
