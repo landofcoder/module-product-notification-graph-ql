@@ -102,7 +102,7 @@ class MySubscribeProductStock
                 $searchValue = trim(str_replace(self::SPECIAL_CHARACTERS, '', $condition[$conditionType]));
                 $matchLength = strlen($searchValue);
                 if ($matchLength < $minQueryLength) {
-                    throw new InputException(__('Invalid match filter. Minimum length is %1.', $tmpminQueryLength));
+                    throw new InputException(__('Invalid match filter. Minimum length is %1.', $minQueryLength));
                 }
                 unset($filters[$filter]['match']);
                 $filters[$filter]['like'] = '%' . $searchValue . '%';
